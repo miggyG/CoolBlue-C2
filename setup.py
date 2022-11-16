@@ -46,7 +46,7 @@ setup(
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
 
     entry_points={
-         'console_scripts': ['coolblue=coolblue:cli'],
+         'console_scripts': ['coolbluec2=CoolBlue-C2:coolblue'],
     },
     install_requires=REQUIRED,
     include_package_data=True,
