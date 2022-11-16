@@ -1,8 +1,7 @@
 import os
+import click
 
-class MainMenu():
-  
-  def __init__(self, args=None):
-    
-
+@click.command()
+def coolbluec2:
+  print("hello world") 
       
