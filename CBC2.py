@@ -1,25 +1,25 @@
 #!/usr/bin/python3 
-
+from CoolBlueC2 import CBC2Main, output
 import sys
-import logging
 import os
+import time
 
-sys.path.append("./src")
+sys.path.append("CoolBlueC2")
 
-import main
 
-def main():
+def loaddata():
+    if not os.path.exists("./data/"):
+        os.mkdir("./data/")
 
-	if os.path.exists("./data/") == False:
-		os.mkdir("./data/")
-   
-  	if os.path.exists("./data/listeners/") == False:
-		os.mkdir("./data/listeners/")
-  
-  	loadlisteners()
-  
-  	start()   
-    
+    if not os.path.exists("./data/listeners/"):
+        os.mkdir("./data/listeners/")
+
+
 if __name__ == "__main__":
-    main()
-
+    loaddata()
+    main = CBC2Main.MainMenu()
+    for _ in output.banner:
+        sys.stdout.write(_)
+        sys.stdout.flush()
+        time.sleep(0.0008)
+    main.cmdloop()
